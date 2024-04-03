@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function Select(props) {
-  const { name, value, onChange } = props;
+  const { name, label, value, onChange } = props;
 
   const generateOptions = () => {
     switch (name) {
@@ -17,7 +17,7 @@ function Select(props) {
 
   return (
     <div className="select-container">
-      <label htmlFor={name}>{name}</label>
+      <label htmlFor={name}>{label}</label>
       <select name={name} value={value} onChange={onChange}>
         {generateOptions().map((option) => (
           <option key={option.key} value={option.value}>
@@ -31,6 +31,7 @@ function Select(props) {
 
 Select.propTypes = {
   name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

@@ -24,7 +24,8 @@ function FormDialog({ columns, isOpen, onClose, onSubmit }) {
         return (
           <Select
             key={column.key}
-            {...column}
+            name={column.key}
+            label={column.name}
             onChange={handleChange}
             value={formData[column.key] || ""}
           />

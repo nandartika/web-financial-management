@@ -18,10 +18,12 @@ function PersonalPage() {
     dispatch(asyncReceivePersonals());
   }, [dispatch]);
 
-  const handleAddPersonal = () => {};
+  const handleAddPersonal = (personal) => {
+    console.log(personal);
+  };
 
   const handleEditPersonal = (personal) => {
-    
+    console.log(personal)
   };
 
   const handleDeletePersonal = (personalId) => {

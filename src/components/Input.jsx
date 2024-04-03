@@ -10,7 +10,6 @@ function Input(props) {
 
     if (validator) {
       const error = validator(value);
-      console.log(error)
       setError(error || "");
     }
 
@@ -26,6 +25,7 @@ function Input(props) {
         name={name}
         value={value}
         onChange={handleChange}
+        maxLength={name === "nik" ? 16 : undefined}
       />
       {error && <p className="error">{error}</p>}
     </div>
