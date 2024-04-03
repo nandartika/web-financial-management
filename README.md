@@ -1,8 +1,22 @@
-# React + Vite
+# Nama Aplikasi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi management financial berbasis web
 
-Currently, two official plugins are available:
+## Instalasi
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Berikut adalah langkah-langkah untuk menginstal aplikasi:
+
+1. **Clone repositori:**
+   git clone https://github.com/username/nama-aplikasi.git
+
+2. **Masuk ke direktori proyek:**
+    cd nama-aplikasi
+
+3. **Instal dependensi:**
+    npm install
+
+## Penggunaan
+
+Setelah instalasi selesai, Anda dapat menjalankan aplikasi dengan perintah:
+npm start
+Akses aplikasi melalui browser di http://localhost:3000.
