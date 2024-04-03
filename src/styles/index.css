@@ -1,0 +1,33 @@
+.navigation {
+  padding: 6px;
+  min-height: 55px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.navigation img {
+  width: 32px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.navigation nav {
+  flex: 1;
+}
+
+.navigation nav a {
+  text-decoration: none;
+  color: var(--foreground-color);
+  font-weight: bold;
+}
+
+.navigation button {
+  border: 0;
+  background-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
