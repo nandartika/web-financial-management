@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+/* Navigation */
 .navigation {
   background-color: #333;
   color: #fff;
@@ -11,6 +12,7 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .navigation h1 {
@@ -47,6 +49,59 @@
   text-decoration: underline;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu-open {
+    display: block !important;
+  }
+
+  .navigation nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    opacity: 0.7;
+  }
+
+  .navigation ul {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .navigation ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+.menu-open ul {
+  display: block;
+  background-color: #333;
+
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
+
+.menu-open li {
+  display: block !important;
+}
+
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -98,4 +153,188 @@ table tbody td a:hover {
 
 .action-button:hover {
   background-color: #0056b3;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead th,
+table tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+table thead th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+table tbody td {
+  color: #333;
+}
+
+table tbody td a {
+  color: blue;
+  text-decoration: underline;
+}
+
+table tbody td a:hover {
+  color: darkblue;
+}
+
+/* Form Dialog */
+.form-dialog {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.form-dialog.open {
+  display: block;
+}
+
+.form-dialog-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-dialog-content h2 {
+  margin-top: 0;
+}
+
+.form-dialog-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-dialog-content form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-dialog-content form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-dialog-content form button:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+  .form-dialog-content {
+    width: 90%;
+  }
+}
+
+/* Input */
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px !important;
+}
+
+.input-container .error {
+  color: #dc3545;
+  font-size: 12px;
+}
+
+/* Select */
+.select-container {
+  margin-bottom: 15px;
+}
+
+.select-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.select-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Personal Page */
+.personal-page {
+  padding: 20px;
+}
+
+.personal-page h1 {
+  margin-bottom: 20px;
+}
+
+.personal-page button {
+  margin-bottom: 20px;
+}
+
+.personal-page .personal-table {
+  margin-bottom: 20px;
 }

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   asyncDeletePersonal,
@@ -6,11 +6,13 @@ import {
 } from "../states/personals/action";
 import Table from "../components/Table";
 import { columns } from "../data/personal-data";
+import FormDialog from "../components/FormDialog";
+import Button from "../components/Button";
 
 function PersonalPage() {
   const dispatch = useDispatch();
   const personals = useSelector((state) => state.personals);
-  console.log(personals);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     dispatch(asyncReceivePersonals());
@@ -18,19 +20,34 @@ function PersonalPage() {
 
   const handleAddPersonal = () => {};
 
-  const handleEditPersonal = (personal) => {};
+  const handleEditPersonal = (personal) => {
+    
+  };
 
   const handleDeletePersonal = (personalId) => {
     dispatch(asyncDeletePersonal(personalId));
   };
 
   return (
-    <Table
-      columns={columns}
-      data={personals}
-      onEdit={handleEditPersonal}
-      onDelete={handleDeletePersonal}
-    />
+    <section className="personal-page">
+      <h1>Personal</h1>
+
+      <Button onClick={() => setIsOpen(true)}>Add Personal</Button>
+
+      <Table
+        columns={columns}
+        data={personals}
+        onEdit={handleEditPersonal}
+        onDelete={handleDeletePersonal}
+      />
+
+      <FormDialog
+        columns={columns}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        onSubmit={handleAddPersonal}
+      />
+    </section>
   );
 }
 

@@ -3,34 +3,36 @@ import ActionButtons from "./ActionButtons";
 
 function Table({ columns, data, onEdit, onDelete }) {
   return (
-    <table>
-      <thead>
-        <tr>
-          {columns.map((column) => (
-            <th key={column.key}>{column.name}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, index) => (
-          <tr key={index}>
-            {columns.map((column) =>
-              column.key === "action" ? (
-                <td key={column.key}>
-                  <ActionButtons
-                    onEdit={onEdit}
-                    onDelete={onDelete}
-                    personal={row}
-                  />
-                </td>
-              ) : (
-                <td key={column.key}>{row[column.key]}</td>
-              )
-            )}
+    <div className="table-container">
+      <table>
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <th key={column.key}>{column.name}</th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={index}>
+              {columns.map((column) =>
+                column.key === "action" ? (
+                  <td key={column.key}>
+                    <ActionButtons
+                      onEdit={onEdit}
+                      onDelete={onDelete}
+                      personal={row}
+                    />
+                  </td>
+                ) : (
+                  <td key={column.key}>{row[column.key]}</td>
+                )
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

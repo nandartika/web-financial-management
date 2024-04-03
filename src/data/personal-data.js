@@ -6,10 +6,22 @@ const columns = [
   {
     key: "name",
     name: "Name",
+    type: "text",
+  },
+  {
+    key: "nik",
+    name: "KTP No.",
+    type: "text",
+    validator: (value) => {
+      if (value.length < 16) {
+        return "KTP No. should be 16 digits";
+      }
+    },
   },
   {
     key: "gender",
     name: "Gender",
+    type: "select",
   },
   {
     key: "create_on",
