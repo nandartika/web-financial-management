@@ -4,6 +4,10 @@ import routes from "../data/routes";
 function NavigationLayout() {
   return (
     <header className="navigation">
+      <h1>
+        <Link to="/">FINANCIAL MANAGEMENT</Link>
+      </h1>
+
       <nav>
         <ul>
           {routes.map((route) => (

@@ -46,8 +46,41 @@ function deletePersonalActionCreator(personalId) {
 function asyncReceivePersonals() {
   return async (dispatch) => {
     try {
-      const personals = await mockAPI.getPersonalsData();
+      const personals = await mockAPI.getPersonals();
       dispatch(receivePersonalsActionCreator(personals));
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+}
+
+function asyncAddPersonal(personal) {
+  return async (dispatch) => {
+    try {
+      const newPersonal = await mockAPI.addPersonal(personal);
+      dispatch(addPersonalActionCreator(newPersonal));
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+}
+
+function asyncEditPersonal(personal) {
+  return async (dispatch) => {
+    try {
+      const newPersonal = await mockAPI.editPersonal(personal);
+      dispatch(editPersonalActionCreator(newPersonal));
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+}
+
+function asyncDeletePersonal(personalId) {
+  return async (dispatch) => {
+    try {
+      await mockAPI.deletePersonal(personalId);
+      dispatch(deletePersonalActionCreator(personalId));
     } catch (error) {
       alert(error.message);
     }
@@ -61,4 +94,7 @@ export {
   editPersonalActionCreator,
   deletePersonalActionCreator,
   asyncReceivePersonals,
+  asyncAddPersonal,
+  asyncEditPersonal,
+  asyncDeletePersonal,
 };

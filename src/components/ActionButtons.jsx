@@ -4,13 +4,13 @@ import {
   FaRegTrashAlt as DeleteIcon,
 } from "react-icons/fa";
 
-function ActionButtons({ onEdit, onDelete }) {
+function ActionButtons({ onEdit, onDelete, personal }) {
   return (
-    <div>
-      <button onClick={onEdit}>
+    <div className="action-buttons">
+      <button className="action-button edit" onClick={onEdit}>
         <EditIcon />
       </button>
-      <button onClick={onDelete}>
+      <button className="action-button delete" onClick={() => onDelete(personal.id)}>
         <DeleteIcon />
       </button>
     </div>
@@ -20,6 +20,7 @@ function ActionButtons({ onEdit, onDelete }) {
 ActionButtons.propTypes = {
   onEdit: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
+  personal: PropTypes.object.isRequired,
 };
 
 export default ActionButtons;

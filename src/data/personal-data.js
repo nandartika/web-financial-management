@@ -1,5 +1,3 @@
-import generateUniqueTimestampId, { IdType } from "../utils/idGenerator";
-
 const columns = [
   {
     key: "id",
@@ -37,7 +35,7 @@ const columns = [
 
 const data = [
   {
-    id: generateUniqueTimestampId(IdType.PERSONAL),
+    id: "personal-1712158241724",
     name: "John Doe",
     gender: "Male",
     create_on: "2024-03-01",
@@ -46,7 +44,7 @@ const data = [
     change_by: "Editor",
   },
   {
-    id: generateUniqueTimestampId(IdType.PERSONAL),
+    id: "personal-1712158241725",
     name: "Jane Smith",
     gender: "Female",
     create_on: "2024-03-02",
@@ -55,7 +53,7 @@ const data = [
     change_by: "Editor",
   },
   {
-    id: generateUniqueTimestampId(IdType.PERSONAL),
+    id: "personal-1712158241726",
     name: "Alex Johnson",
     gender: "Male",
     create_on: "2024-03-03",

@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import ActionButtons from "./ActionButtons";
 
-function Table({ columns, data }) {
+function Table({ columns, data, onEdit, onDelete }) {
   return (
     <table>
       <thead>
         <tr>
           {columns.map((column) => (
-            <th key={column.key}>{column.title}</th>
+            <th key={column.key}>{column.name}</th>
           ))}
         </tr>
       </thead>
@@ -17,7 +17,11 @@ function Table({ columns, data }) {
             {columns.map((column) =>
               column.key === "action" ? (
                 <td key={column.key}>
-                  <ActionButtons onEdit={() => {}} onDelete={() => {}} />
+                  <ActionButtons
+                    onEdit={onEdit}
+                    onDelete={onDelete}
+                    personal={row}
+                  />
                 </td>
               ) : (
                 <td key={column.key}>{row[column.key]}</td>
@@ -33,6 +37,8 @@ function Table({ columns, data }) {
 Table.propTypes = {
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default Table;
