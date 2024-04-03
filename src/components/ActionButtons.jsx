@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {
   FaRegEdit as EditIcon,
-  FaRegTrashCan as DeleteIcon,
+  FaRegTrashAlt as DeleteIcon,
 } from "react-icons/fa";
 
 function ActionButtons({ onEdit, onDelete }) {

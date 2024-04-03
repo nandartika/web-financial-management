@@ -17,7 +17,7 @@ function Table({ columns, data }) {
             {columns.map((column) =>
               column.key === "action" ? (
                 <td key={column.key}>
-                  <ActionButtons />
+                  <ActionButtons onEdit={() => {}} onDelete={() => {}} />
                 </td>
               ) : (
                 <td key={column.key}>{row[column.key]}</td>
