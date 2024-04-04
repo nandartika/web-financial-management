@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  asyncAddPersonal,
   asyncDeletePersonal,
   asyncReceivePersonals,
 } from "../states/personals/action";
@@ -19,7 +20,7 @@ function PersonalPage() {
   }, [dispatch]);
 
   const handleAddPersonal = (personal) => {
-    console.log(personal);
+    dispatch(asyncAddPersonal(personal));
   };
 
   const handleEditPersonal = (personal) => {

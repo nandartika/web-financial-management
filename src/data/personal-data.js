@@ -49,6 +49,7 @@ const data = [
   {
     id: "personal-1712158241724",
     name: "John Doe",
+    nik: "1234567890123456",
     gender: "Male",
     create_on: "2024-03-01",
     create_by: "Admin",
@@ -58,6 +59,7 @@ const data = [
   {
     id: "personal-1712158241725",
     name: "Jane Smith",
+    nik: "9876543210987654",
     gender: "Female",
     create_on: "2024-03-02",
     create_by: "Admin",
@@ -67,6 +69,7 @@ const data = [
   {
     id: "personal-1712158241726",
     name: "Alex Johnson",
+    nik: "5678901234567890",
     gender: "Male",
     create_on: "2024-03-03",
     create_by: "Admin",

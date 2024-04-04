@@ -1,3 +1,5 @@
+import generateDate from "../utils/dateGenerator";
+import generateUniqueTimestampId, { IdType } from "../utils/idGenerator";
 import { data } from "./personal-data";
 
 const mockAPI = (() => {
@@ -31,8 +33,16 @@ const mockAPI = (() => {
     });
   }
 
-  function addPersonal(personal) {
+  function addPersonal(req) {
     return mockRequest(() => {
+      const personal = {
+        id: generateUniqueTimestampId(IdType.PERSONAL),
+        ...req,
+        create_on: generateDate(),
+        create_by: "Admin",
+        change_on: generateDate(),
+        change_by: "Admin",
+      }
       personals = [...personals, personal];
       savePersonalsToStorage();
       return personal;
